@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dai Lab | Plant Epigenetics & Genome Biology</title>
+  <style>
+    :root {
+      --bg: #f7faf7;
+      --text: #1f2933;
+      --muted: #5b6773;
+      --green: #2f6f4e;
+      --light-green: #e7f2ea;
+      --card: #ffffff;
+      --border: #dbe5dd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: var(--green);
+      font-size: 22px;
+    }
+
+    nav a {
+      margin-left: 22px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #e7f2ea 0%, #f7faf7 60%);
+      padding: 88px 24px 72px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 0 0 20px;
+      color: var(--green);
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(31, 41, 51, 0.08);
+    }
+
+    .button-row {
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      margin-right: 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: white;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 64px 24px;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 18px;
+      color: var(--green);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(31, 41, 51, 0.04);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--green);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .publication {
+      background: var(--card);
+      border-left: 5px solid var(--green);
+      padding: 18px 22px;
+      margin: 16px 0;
+      border-radius: 8px;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .person {
+      display: flex;
+      gap: 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: var(--light-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .join {
+      background: var(--light-green);
+      border-radius: 22px;
+      padding: 38px;
+    }
+
+    footer {
+      background: #1f2933;
+      color: white;
+      padding: 36px 24px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccebd6;
+    }
+
+    @media (max-width: 800px) {
+      .hero-inner,
+      .grid,
+      .people-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav div:last-child {
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Dai Lab</div>
+      <div>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#people">People</a>
+        <a href="#join">Join Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1>Plant Epigenetics, Aging & Genome Regulation</h1>
+          <p>
+            The Dai Lab studies how epigenetic information shapes plant development, aging,
+            regeneration, and crop traits. We combine genomics, methylome profiling,
+            chromatin biology, genetics, and computational approaches in Arabidopsis and maize.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#research">Explore Research</a>
+            <a class="btn btn-secondary" href="#join">Join the Lab</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Research focus</h3>
+          <p class="muted">
+            Epigenetic aging · DNA methylation · Chromatin regulation · Plant regeneration ·
+            Maize leaf senescence · Imprinting · Multi-omics
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p class="muted">
+        We aim to understand how epigenetic programs are established, maintained, remodeled,
+        and lost across plant life histories.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Epigenetic Aging</h3>
+          <p>
+            We investigate how DNA methylation and chromatin states change during plant organ aging,
+            and how these changes relate to developmental timing and cellular identity.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Maize Senescence & Yield</h3>
+          <p>
+            We study how leaf aging, source-sink interactions, and epigenetic regulation influence
+            grain filling, stay-green traits, and crop productivity.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Regeneration & Reprogramming</h3>
+          <p>
+            We explore epigenetic barriers that shape plant tissue culture, transformation efficiency,
+            and regeneration competence across genotypes and tissues.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <div class="publication">
+        <strong>Dai et al.</strong> Aging drives programmed DNA methylation decay in plant organs.
+        <span class="muted">Add journal, year, and DOI here.</span>
+      </div>
+      <div class="publication">
+        <strong>Future publication title.</strong>
+        <span class="muted">Add your maize aging, regeneration, or imprinting studies here.</span>
+      </div>
+      <div class="publication">
+        <strong>Future publication title.</strong>
+        <span class="muted">Add additional papers, preprints, or datasets here.</span>
+      </div>
+    </section>
+
+    <section id="people">
+      <h2>People</h2>
+      <div class="people-grid">
+        <div class="person">
+          <div class="avatar">DD</div>
+          <div>
+            <h3>Dawei Dai</h3>
+            <p class="muted">Principal Investigator</p>
+            <p>
+              Plant epigenetics, DNA methylation, aging, chromatin regulation, and crop genomics.
+            </p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="avatar">+</div>
+          <div>
+            <h3>Future lab members</h3>
+            <p class="muted">Students · Postdocs · Technicians</p>
+            <p>
+              We welcome curious people interested in plant epigenetics, genomics, and quantitative biology.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="join">
+        <h2>Join Us</h2>
+        <p>
+          We are recruiting motivated students, postdocs, and research staff interested in plant epigenetics,
+          aging, regeneration, maize biology, and computational genomics.
+        </p>
+        <p>
+          Prospective members are encouraged to send a CV, a brief statement of research interests,
+          and contact information for references.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email:</strong> your.email@university.edu<br />
+        <strong>Address:</strong> Department / University / City, State<br />
+        <strong>Links:</strong> Google Scholar · GitHub · ORCID · X/Twitter
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Dai Lab. Built with HTML/CSS and hosted for free using GitHub Pages.</p>
+  </footer>
+</body>
+</html>
